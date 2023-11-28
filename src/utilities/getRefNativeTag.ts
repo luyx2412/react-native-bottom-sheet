@@ -19,25 +19,25 @@ const hasNativeTag = (
  * This should be Fabric compatible as long as the ref is a native host component.
  * */
 export function getRefNativeTag(ref: unknown) {
-  const refType = typeof ref;
+  // const refType = typeof ref;
   let nativeTag: undefined | number;
-  if (isFunction(ref)) {
-    nativeTag = ref();
-  } else if (hasNativeTag(ref)) {
-    nativeTag = ref.current._nativeTag;
-  }
+  // if (isFunction(ref)) {
+  //   nativeTag = ref();
+  // } else if (hasNativeTag(ref)) {
+  //   nativeTag = ref.current._nativeTag;
+  // }
 
-  if (!nativeTag || typeof nativeTag !== 'number') {
-    throw new Error(
-      `Unexpected nativeTag: ${refType}; nativeTag=${nativeTag} 
+  // if (!nativeTag || typeof nativeTag !== 'number') {
+  //   throw new Error(
+  //     `Unexpected nativeTag: ${refType}; nativeTag=${nativeTag} 
 
-			createBottomSheetScrollableComponent's ScrollableComponent needs to return 
-			a reference that contains a nativeTag to a Native HostComponent.
+	// 		createBottomSheetScrollableComponent's ScrollableComponent needs to return 
+	// 		a reference that contains a nativeTag to a Native HostComponent.
 
-			ref=${ref}
-			`
-    );
-  }
+	// 		ref=${ref}
+	// 		`
+  //   );
+  // }
 
   return nativeTag;
 }
